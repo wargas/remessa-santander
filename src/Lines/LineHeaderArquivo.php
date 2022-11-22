@@ -20,6 +20,8 @@ class LineHeaderArquivo extends LineAbstract
 
     function build()
     {
+        
+        $this->campos = [];
         $this->addCampo($this->codigo_banco_compensacao, "N", 3);
         $this->addCampo($this->lote_servico, "N", 4);
         $this->addCampo($this->tipo_registro, "N", 1);
@@ -98,8 +100,6 @@ class LineHeaderArquivo extends LineAbstract
     public function setNumeroVersaoLayoutArquivo($value) {
         $this->numero_versao_layout_arquivo = $value;
         return $this;
-    } 
-
-    
+    }     
     
 }

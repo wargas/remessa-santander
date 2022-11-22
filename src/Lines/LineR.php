@@ -7,7 +7,7 @@ class LineR extends LineAbstract
 
     private $codigo_banco_compensacao = 33;
     private $numero_lote_remessa;
-    private $tipo_registro;
+    private $tipo_registro = 3;
     private $numero_sequencial_registro_lote;
     private $codigoSegmentoRegistroDetalhe;
     private $codigo_movimento;
@@ -95,6 +95,7 @@ class LineR extends LineAbstract
 
     function build()
     {
+        $this->campos = [];
         $this->addCampo($this->codigo_banco_compensacao,"N", 3); 
         $this->addCampo($this->numero_lote_remessa,"N", 4); 
         $this->addCampo($this->tipo_registro,"N", 1); 

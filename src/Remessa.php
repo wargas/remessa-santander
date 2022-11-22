@@ -8,7 +8,8 @@ class Remessa {
     
     private $lines = [];
 
-    function addLines(LineAbstract $line) {
+    function addLine(LineAbstract $line) {
+        $line->build();
         $this->lines[] = $line;
         return $this;
     }

@@ -7,7 +7,7 @@ class LineP extends LineAbstract
 
     private $codigo_banco_compensacao = 33;
     private $numero_lote_remessa;
-    private $tipo_registro;
+    private $tipo_registro = 3;
     private $numero_sequencial_registro_lote;
     private $codigo_segmento_registro_detalhe = "P";
     private $codigo_movimento_remessa;
@@ -46,6 +46,7 @@ class LineP extends LineAbstract
 
     function build()
     {
+        $this->campos = [];
         $this->addCampo($this->codigo_banco_compensacao, "N", 3);
         $this->addCampo($this->numero_lote_remessa, "N", 4);
         $this->addCampo($this->tipo_registro, "N", 1);

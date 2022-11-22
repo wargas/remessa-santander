@@ -21,6 +21,7 @@ class LineHeaderLote extends LineAbstract {
 
     function build()
     {
+        $this->campos = [];
         $this->addCampo($this->codigo_banco_compensacao, "N", 3);
         $this->addCampo($this->numero_lote_remessa, "N", 4);
         $this->addCampo($this->tipo_registro, "N", 1);

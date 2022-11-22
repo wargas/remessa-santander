@@ -5,8 +5,8 @@ namespace App\Remessa\Lines;
 class LineTrailerArquivo extends LineAbstract
 {
     private $codigo_banco_compensacao = 33;
-    private $numero_lote_remessa;
-    private $tipo_registro;
+    private $numero_lote_remessa = 9999;
+    private $tipo_registro = 9;
     private $quantidade_lotes_arquivo;
     private $quantidade_registros_arquivo;
 
@@ -43,6 +43,7 @@ class LineTrailerArquivo extends LineAbstract
 
     function build()
     {
+        $this->campos = [];
         $this->addCampo($this->codigo_banco_compensacao, "N", 3);
         $this->addCampo($this->numero_lote_remessa, "N", 4);
         $this->addCampo($this->tipo_registro, "N", 1);

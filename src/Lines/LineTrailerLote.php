@@ -6,8 +6,8 @@ class LineTrailerLote extends LineAbstract
 {
 
     private $codigo_banco_compensacao = 33;
-    private $numero_lote_remessa;
-    private $tipo_registro;
+    private $numero_lote_remessa = 9999;
+    private $tipo_registro = 5;
     private $quantidade_registros_lote;
 
     function setCodigoBancoCompensacao($value)
@@ -38,6 +38,7 @@ class LineTrailerLote extends LineAbstract
 
     function build()
     {
+        $this->campos = [];
         $this->addCampo($this->codigo_banco_compensacao, "N", 3);
         $this->addCampo($this->numero_lote_remessa, "N", 4);
         $this->addCampo($this->tipo_registro, "N", 1);
