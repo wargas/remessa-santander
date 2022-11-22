@@ -7,7 +7,7 @@ class LineP extends LineAbstract
 
     private $codigo_banco_compensacao = 33;
     private $numero_lote_remessa;
-    private $tipo_registro = "P";
+    private $tipo_registro;
     private $numero_sequencial_registro_lote;
     private $codigo_segmento_registro_detalhe = "P";
     private $codigo_movimento_remessa;
