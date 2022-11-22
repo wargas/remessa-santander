@@ -17,7 +17,9 @@ $line_h_arquivo = new LineHeaderArquivo();
 $line_h_arquivo->build();
 
 $line_p = new LineP();
+$line_p->setValorNominalBoleto(100);
 $line_p->build();
+
 
 $remessa
     ->addLines($line_h_arquivo)

@@ -19,6 +19,29 @@ class LineHeaderLote extends LineAbstract {
     private $numero_remessa_retorno;
     private $data_gravacao_remessa_retorno;
 
+    function build()
+    {
+        $this->addCampo($this->codigo_banco_compensacao, "N", 3);
+        $this->addCampo($this->numero_lote_remessa, "N", 4);
+        $this->addCampo($this->tipo_registro, "N", 1);
+        $this->addCampo($this->tipo_operacao, "A", 1 );
+        $this->addCampo($this->tipo_servico, "N", 2);
+        $this->addCampo(" ", "A", 2);
+        $this->addCampo($this->numero_versao_layout_lote, "N", 3);
+        $this->addCampo(" ", "A", 1 );
+        $this->addCampo($this->tipo_inscricao_empresa, "N", 1);
+        $this->addCampo($this->numero_inscricao_empresa, "N", 15);
+        $this->addCampo(" ", "A", 20 );
+        $this->addCampo($this->codigo_transmissao, "N", 15   );
+        $this->addCampo(" ", "A", 5);
+        $this->addCampo($this->nome_beneficiario, "A", 30);
+        $this->addCampo($this->mensagem_1, "A", 40);
+        $this->addCampo($this->mensagem_2, "A", 40);
+        $this->addCampo($this->numero_remessa_retorno, "N", 8);
+        $this->addCampo($this->data_gravacao_remessa_retorno, "N", 8);
+        $this->addCampo(" ", "A", 41);
+    }
+
     public function setCodigoBancoCompensacao($value) {
         $this->codigo_banco_compensacao = $value;
         return $this;
@@ -87,29 +110,5 @@ class LineHeaderLote extends LineAbstract {
     public function setDataGravacaoRemessaRetorno    ($value) {
         $this->data_gravacao_remessa_retorno = $value;
         return $this;
-    }
-
-
-    function build()
-    {
-        $this->addCampo($this->codigo_banco_compensacao, "N", 3);
-        $this->addCampo($this->numero_lote_remessa, "N", 4);
-        $this->addCampo($this->tipo_registro, "N", 1);
-        $this->addCampo($this->tipo_operacao, "A", 1 );
-        $this->addCampo($this->tipo_servico, "N", 2);
-        $this->addCampo(" ", "A", 2);
-        $this->addCampo($this->numero_versao_layout_lote, "N", 3);
-        $this->addCampo(" ", "A", 1 );
-        $this->addCampo($this->tipo_inscricao_empresa, "N", 1);
-        $this->addCampo($this->numero_inscricao_empresa, "N", 15);
-        $this->addCampo(" ", "A", 20 );
-        $this->addCampo($this->codigo_transmissao, "N", 15   );
-        $this->addCampo(" ", "A", 5);
-        $this->addCampo($this->nome_beneficiario, "A", 30);
-        $this->addCampo($this->mensagem_1, "A", 40);
-        $this->addCampo($this->mensagem_2, "A", 40);
-        $this->addCampo($this->numero_remessa_retorno, "N", 8);
-        $this->addCampo($this->data_gravacao_remessa_retorno, "N", 8);
-        $this->addCampo(" ", "A", 41);
     }
 }

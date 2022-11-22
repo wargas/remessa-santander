@@ -7,7 +7,7 @@ class LineQ extends LineAbstract
     private $codigo_banco_compensacao = 33;
     private $numero_lote_remessa;
     private $tipo_registro;
-    private $numero_sequencial_registro_no_lote;
+    private $numero_sequencial_registro_lote;
     private $codigo_segmento_registro_detalhe = "Q";
     private $codigo_movimento_remessa;
     private $tipo_inscricao_pagador;
@@ -28,7 +28,7 @@ class LineQ extends LineAbstract
         $this->addCampo($this->codigo_banco_compensacao, "N", 3);
         $this->addCampo($this->numero_lote_remessa, "N", 4);
         $this->addCampo($this->tipo_registro, "N", 1);
-        $this->addCampo($this->numero_sequencial_registro_no_lote, "N", 5);
+        $this->addCampo($this->numero_sequencial_registro_lote, "N", 5);
         $this->addCampo($this->codigo_segmento_registro_detalhe, "A", 1);
         $this->addCampo(" ", "A", 1);
         $this->addCampo($this->codigo_movimento_remessa, "N", 2);
@@ -69,9 +69,9 @@ class LineQ extends LineAbstract
         return $this;
     }
 
-    function setNumeroSequencialRegistroNoLote($value)
+    function setNumeroSequencialRegistroLote($value)
     {
-        $this->numero_sequencial_registro_no_lote = $value;
+        $this->numero_sequencial_registro_lote = $value;
         return $this;
     }
 

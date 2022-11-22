@@ -5,18 +5,18 @@ namespace App\Remessa\Lines;
 class LineHeaderArquivo extends LineAbstract
 {
 
-    private $codigo_banco_compensacao = '033';
-    private $lote_servico = '0000';
-    private $tipo_registro = '0';
-    private $tipo_inscricao_empresa;
-    private $numero_inscricao_empresa;
+    private $codigo_banco_compensacao = 33;
+    private $lote_servico = 0;
+    private $tipo_registro = 0;
+    private $tipo_inscricao_empresa = 2;
+    private $numero_inscricao_empresa = '11340883000103';
     private $codigo_transmissao;
-    private $nome_empresa;
+    private $nome_empresa = 'BITMAX TELECON';
     private $nome_banco = 'Banco Santander';
-    private $codigo_remessa = '1';
+    private $codigo_remessa = 1;
     private $data_geracao_arquivo;
     private $numero_sequencial_arquivo;
-    private $numero_versao_layout_arquivo = '40';
+    private $numero_versao_layout_arquivo = 40;
 
     function build()
     {
