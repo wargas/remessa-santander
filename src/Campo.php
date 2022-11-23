@@ -22,4 +22,6 @@ class Campo {
             return str_pad($this->value, $this->size, '0',STR_PAD_LEFT);
         }
     }
+
+    
 }

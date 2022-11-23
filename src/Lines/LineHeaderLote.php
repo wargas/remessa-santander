@@ -5,17 +5,17 @@ namespace App\Remessa\Lines;
 class LineHeaderLote extends LineAbstract {
 
     private $codigo_banco_compensacao = 33;
-    private $numero_lote_remessa;
+    private $numero_lote_remessa = 1;
     private $tipo_registro = 1;
     private $tipo_operacao = 'R';
     private $tipo_servico = 1;
     private $numero_versao_layout_lote = 30;
-    private $tipo_inscricao_empresa;
-    private $numero_inscricao_empresa;
-    private $codigo_transmissao   ;
-    private $nome_beneficiario;
-    private $mensagem_1;
-    private $mensagem_2;
+    private $tipo_inscricao_empresa = 2;
+    private $numero_inscricao_empresa = '11340883000103';
+    private $codigo_transmissao = 400400000177808;
+    private $nome_beneficiario = 'BITMAX TELECOM LTDA';
+    private $mensagem_1 = 'mensagem_1';
+    private $mensagem_2 = 'mensagem_2';
     private $numero_remessa_retorno;
     private $data_gravacao_remessa_retorno;
 

@@ -6,11 +6,18 @@ use App\Remessa\Lines\LineAbstract;
 
 class Remessa {
     
-    private $lines = [];
+    public $lines = [];
 
     function addLine(LineAbstract $line) {
         $line->build();
         $this->lines[] = $line;
+        return $this;
+    }
+
+    function addLines(...$lines) {
+        foreach($lines as $line) {
+            $this->addLine($line);
+        }
         return $this;
     }
 
@@ -21,6 +28,6 @@ class Remessa {
             $arrayText[] = $line->getLineText();
         }
 
-        return implode("\n", $arrayText);
+        return implode("\r\n", $arrayText);
     }
 }

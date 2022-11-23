@@ -5,11 +5,11 @@ namespace App\Remessa\Lines;
 class LineQ extends LineAbstract
 {
     private $codigo_banco_compensacao = 33;
-    private $numero_lote_remessa;
+    private $numero_lote_remessa = 1;
     private $tipo_registro = 3;
     private $numero_sequencial_registro_lote;
     private $codigo_segmento_registro_detalhe = "Q";
-    private $codigo_movimento_remessa;
+    private $codigo_movimento_remessa = 1;
     private $tipo_inscricao_pagador;
     private $numero_inscricao_pagador;
     private $nome_pagador;
@@ -19,9 +19,9 @@ class LineQ extends LineAbstract
     private $sufixo_cep_pagador;
     private $cidade_pagador;
     private $unidade_federacao_pagador;
-    private $tipo_inscricao_beneficiario_final;
-    private $numero_inscricao_beneficiario_final;
-    private $nome_beneficiario_final;
+    private $tipo_inscricao_beneficiario_final = 0;
+    private $numero_inscricao_beneficiario_final = 0;
+    private $nome_beneficiario_final = " ";
 
     function build()
     {

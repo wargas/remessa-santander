@@ -1,3 +1,13 @@
+Nota 1: LOTE DE SERVIÇO / NÚMERO DO LOTE DE REMESSA / RETORNO 
+ 
+Identifica um Lote de Serviço.Criado e controlado pelo responsável pela geração magnética dos dados contidos no arquivo. 
+Preencher com ‘0001’ para o primeiro lote do arquivo, mantendo seqüencial crescente para os demais (número do lote 
+anterior acrescido de 1). O número não poderá ser repetido dentro do arquivo. 
+Se registro for Header do Arquivo preencher com ‘0000’ 
+Se registro for Trailer do Arquivo preencher com ‘9999’ 
+ 
+ 
+
 REGISTRO DETALHE - SEGMENTO Q      REMESSA 
 setCodigoBancoCompensacao;codigo_banco_compensacao;N;3
 setNumeroLoteRemessa;numero_lote_remessa;N;4
@@ -77,3 +87,18 @@ setReservado13;reservado_13;N;9
 setQuantidadeLotesArquivo;quantidade_lotes_arquivo;N;6
 setQuantidadeRegistrosArquivo;quantidade_registros_arquivo;N;6
 setReservado14;reservado_14;A;211
+
+
+codigoBancoCompensacao;codigo_banco_compensacao;N;003
+loteServico;lote_servico;N;004
+tipoRegistro;tipo_registro;N;001
+numeroSequencialRegistroLote;numero_sequencial_registro_lote;N;005
+codigoSegmentoRegistroDetalhe;codigo_segmento_registro_detalhe;A;001
+reservado1;reservado_1;A;001
+codigoMovimentoRemessa;codigo_movimento_remessa;N;002
+identificacaoRegistro;identificacao_registro;N;002
+reservado2;reservado_2;A;061
+tipoChavePix;tipo_chave_pix;A;001
+chavePix;chave_pix;A;077
+codigoIdentificacaoQrCode;codigo_identificacao_qr_code;A;035
+reservado3;reservado_3;A;047

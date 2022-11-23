@@ -6,43 +6,43 @@ class LineP extends LineAbstract
 {
 
     private $codigo_banco_compensacao = 33;
-    private $numero_lote_remessa;
+    private $numero_lote_remessa = 1;
     private $tipo_registro = 3;
     private $numero_sequencial_registro_lote;
     private $codigo_segmento_registro_detalhe = "P";
-    private $codigo_movimento_remessa;
-    private $agencia_destinataria;
-    private $digito_agencia_destinataria;
-    private $numero_conta_corrente;
-    private $digito_verificador_conta;
-    private $conta_cobranca_destinataria_fidc;
-    private $digito_conta_cobranca_destinataria_fidc;
+    private $codigo_movimento_remessa = 1;
+    private $agencia_destinataria = 4004;
+    private $digito_agencia_destinataria = 5;
+    private $numero_conta_corrente = 13001562;
+    private $digito_verificador_conta = 6;
+    private $conta_cobranca_destinataria_fidc = 13001562;
+    private $digito_conta_cobranca_destinataria_fidc = 6;
     private $identificacao_boleto_no_banco;
-    private $tipo_cobranca;
-    private $forma_cadastramento;
-    private $tipo_documento;
+    private $tipo_cobranca = 5;
+    private $forma_cadastramento = 1;
+    private $tipo_documento = 2;
     private $numero_documento;
     private $data_vencimento_boleto;
     private $valor_nominal_boleto;
-    private $agencia_encarregada_cobranca_fidc;
-    private $digito_agencia_beneficiario_fidc;
-    private $especie_boleto;
-    private $identificacao_boleto_aceito_nao_aceito;
+    private $agencia_encarregada_cobranca_fidc = 0;
+    private $digito_agencia_beneficiario_fidc = 0;
+    private $especie_boleto = 4;
+    private $identificacao_boleto_aceito_nao_aceito = 'N';
     private $data_emissao_boleto;
-    private $codigo_juros_mora;
+    private $codigo_juros_mora = 2;
     private $data_juros_mora;
-    private $valor_mora_dia_ou_taxa_mensal;
-    private $codigo_desconto_1;
-    private $data_desconto_1;
-    private $valor_ou_percentual_desconto_concedido;
-    private $percentual_iof_a_ser_recolhido;
-    private $valor_abatimento;
-    private $identificacao_boleto_empresa;
-    private $codigo_para_protesto;
-    private $numero_dias_para_protesto;
-    private $codigo_para_baixa_devolucao;
-    private $numero_dias_para_baixa_devolucao;
-    private $codigo_moeda;
+    private $valor_mora_dia_ou_taxa_mensal = '001';
+    private $codigo_desconto_1 = 0;
+    private $data_desconto_1 = 0;
+    private $valor_ou_percentual_desconto_concedido = 0;
+    private $percentual_iof_a_ser_recolhido = 0;
+    private $valor_abatimento = 0;
+    private $identificacao_boleto_empresa = " ";
+    private $codigo_para_protesto = 0;
+    private $numero_dias_para_protesto = 0;
+    private $codigo_para_baixa_devolucao = 2;
+    private $numero_dias_para_baixa_devolucao = 0;
+    private $codigo_moeda = 0;
 
     function build()
     {
@@ -88,7 +88,7 @@ class LineP extends LineAbstract
         $this->addCampo($this->codigo_para_protesto, "N", 1);
         $this->addCampo($this->numero_dias_para_protesto, "N", 2);
         $this->addCampo($this->codigo_para_baixa_devolucao, "N", 1);
-        $this->addCampo(" ", "N", 1);
+        $this->addCampo(0, "N", 1);
         $this->addCampo($this->numero_dias_para_baixa_devolucao, "N", 2);
         $this->addCampo($this->codigo_moeda, "N", 2);
         $this->addCampo(" ", "A", 11);
@@ -168,7 +168,7 @@ class LineP extends LineAbstract
 
     public function setIdentificacaoBoletoNoBanco($value)
     {
-        $this->identificacao_boleto_no_banco = $value;
+        $this->identificacao_boleto_no_banco = $this->modulo11($value);
         return $this;
     }
 

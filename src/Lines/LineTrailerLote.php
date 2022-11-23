@@ -6,7 +6,7 @@ class LineTrailerLote extends LineAbstract
 {
 
     private $codigo_banco_compensacao = 33;
-    private $numero_lote_remessa = 9999;
+    private $numero_lote_remessa = 1;
     private $tipo_registro = 5;
     private $quantidade_registros_lote;
 

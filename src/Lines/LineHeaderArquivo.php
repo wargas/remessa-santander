@@ -10,9 +10,9 @@ class LineHeaderArquivo extends LineAbstract
     private $tipo_registro = 0;
     private $tipo_inscricao_empresa = 2;
     private $numero_inscricao_empresa = '11340883000103';
-    private $codigo_transmissao;
-    private $nome_empresa = 'BITMAX TELECON';
-    private $nome_banco = 'Banco Santander';
+    private $codigo_transmissao = 400400000177808;
+    private $nome_empresa = 'BITMAX TELECOM LTDA';
+    private $nome_banco = 'BANCO SANTANDER';
     private $codigo_remessa = 1;
     private $data_geracao_arquivo;
     private $numero_sequencial_arquivo;
@@ -20,7 +20,6 @@ class LineHeaderArquivo extends LineAbstract
 
     function build()
     {
-        
         $this->campos = [];
         $this->addCampo($this->codigo_banco_compensacao, "N", 3);
         $this->addCampo($this->lote_servico, "N", 4);
