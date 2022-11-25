@@ -18,7 +18,6 @@ $line_h_arquivo = new LineHeaderArquivo();
 $line_h_arquivo->setDataGeracaoArquivo(22112022);
 $line_h_arquivo->setNumeroSequencialArquivo(1);
 
-
 $line_h_lote = new LineHeaderLote();
 $line_h_lote->setNumeroRemessaRetorno(1);
 $line_h_lote->setDataGravacaoRemessaRetorno(22112022);
@@ -67,12 +66,6 @@ $line_t_arquivo->setQuantidadeRegistrosArquivo(7);
 
 $remessa->addLines($line_t_lote, $line_t_arquivo);
 
-$filename = "arquivo-remessa";
-header("Content-type: plain/text");
-header("Content-Disposition: attachment; filename={$filename}.txt");
-header("Pragma: no-cache");
-header("Expires: 0");
+$remessa->download("remessa");
 
-echo $remessa->getText();
-
-file_put_contents('remessa.txt', $remessa->getText());
+$remessa->writeFile("remessa-2.txt");
